@@ -1,3 +1,12 @@
+"""
+motor_vehicles.py
+
+This file takes in info on motor vehicle accidents in NYC over a given time period.  The file is converted
+into a DataFrame with Pandas.  Uninteresting columns are dropped from the DataFrame.  The final DataFrame 
+consists of information on mv accidents in the 11374 area code only.  The head of this DF is printed, along with
+the top 5 on street, cross street and off street accidents in 11374.
+"""
+
 import sys
 import csv   #Comma-separated values.  Do not name this Python script csv.py.
 import datetime
