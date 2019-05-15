@@ -37,6 +37,8 @@ fileFromString = io.StringIO(s)
 df = pd.read_csv(fileFromString, dtype = {'ZIP CODE': str})  #reads in fileFromString as DataFrame
 fileFromString.close()
 
+df.fillna(0, inplace=True) # replaces NaN values with 0 
+
 to_drop = ['LATITUDE',          
           'LONGITUDE',
           'LOCATION',
