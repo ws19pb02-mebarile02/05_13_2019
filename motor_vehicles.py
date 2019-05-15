@@ -34,7 +34,7 @@ except UnicodeError as unicodeError:
     sys.exit(1)
 
 fileFromString = io.StringIO(s)
-df = pd.read_csv(fileFromString) #reads in fileFromString as DataFrame
+df = pd.read_csv(fileFromString, dtype = {'ZIP CODE': str})  #reads in fileFromString as DataFrame
 fileFromString.close()
 
 to_drop = ['LATITUDE',          
@@ -53,7 +53,7 @@ to_drop = ['LATITUDE',
 
 
 df.drop(columns=to_drop, inplace=True) #drops listed columns
-is_11374 =  df['ZIP CODE'] == 11374  #returns list of booleans
+is_11374 =  df['ZIP CODE'] == '11374'  #returns list of booleans
 df_11374 = df[is_11374]  #produces dataframe containing info for 11374 zip only
 
 print('Head of edited dataframe')
